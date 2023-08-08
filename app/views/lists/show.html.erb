@@ -6,7 +6,17 @@
   </div>
   <hr>
   <hr>
-  <div class="py-2 text-center">
-    <%= link_to "Add movie to list"%>
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <%= link_to "Add movie to list", class: 'btn btn-primary'%>
+      </div>
+      <div class="col-6">
+        <%= link_to "Delete",
+        list_path(@list),
+        data: { turbo_method: :delete }
+        %>
+      </div>
+    </div>
   </div>
 </div>

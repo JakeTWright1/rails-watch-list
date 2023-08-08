@@ -4,4 +4,7 @@ class MoviesController < ApplicationController
     @movies = Movie.all
   end
 
+  def home
+  end
+
 end

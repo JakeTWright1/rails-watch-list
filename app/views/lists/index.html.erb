@@ -12,18 +12,11 @@
                 <div class="col-6">
                   <%= link_to "View List", list_path(list), class: 'btn btn-primary' %>
                 </div>
-                <div class="col-6">
-                  <%= link_to "Delete List",
-                  list_path(list),
-                  class: 'btn btn-danger',
-                  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-                  %>
-                </div>
+  <% end %>
               </div>
             </div>
         </div>
       </div>
-  <% end %>
     </div>
   <hr>
 </div>
