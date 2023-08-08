@@ -1,0 +1,29 @@
+<%= render 'application/navbar' %>
+<div class="container">
+  <hr>
+  <div class="container">
+  <div class="row">
+  <% @lists.each do |list| %>
+      <div class="col-4 mt-2">
+        <div class="card shadow p-3 mb-5 bg-white rounded h-100 my-1 py-1" style="min-height: 2rem">
+            <div class="card-body text-center">
+              <h5 class="card-title text-center"><%= list.name %></h3>
+              <div class="row">
+                <div class="col-6">
+                  <%= link_to "View List", list_path(list), class: 'btn btn-primary' %>
+                </div>
+                <div class="col-6">
+                  <%= link_to "Delete List",
+                  list_path(list),
+                  class: 'btn btn-danger',
+                  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+                  %>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+  <% end %>
+    </div>
+  <hr>
+</div>

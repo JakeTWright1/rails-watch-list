@@ -1,0 +1,12 @@
+<%= render 'application/navbar' %>
+<div class="container">
+  <div class="py-2 text-center">
+    <h1>Create list </h1>
+  </div>
+  <div class="text-center">
+  <%= simple_form_for @list do |f| %>
+  <%= f.input :name %>
+  <%= f.submit %>
+<% end %>
+  </div>
+</div>
