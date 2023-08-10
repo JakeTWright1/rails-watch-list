@@ -1,14 +1,18 @@
-<div class="p-5 text-center bg-image rounded-3 h-100" style="
-    background-image: url('https://media.wbur.org/wp/2020/12/GettyImages-1150049038-1000x630.jpg');
-    height: 100vh;
-  ">
-  <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
-    <div class="d-flex justify-content-center align-items-center vh-100">
-      <div class="text-white">
-        <h1 class="mb-3">Welcome to your watchlist!</h1>
-        <h4 class="mb-3">Click below to enter!</h4>
-        <%= link_to "Enter", lists_path, class: 'btn btn-primary' %>
+  <div class="p-5 text-center bg-image rounded-3 h-100" style="
+      background-image: url('https://media.wbur.org/wp/2020/12/GettyImages-1150049038-1000x630.jpg');
+      height: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      overflow-y: hidden;
+    ">
+    <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+      <div class="d-flex justify-content-center align-items-center vh-100">
+        <div class="text-white">
+          <h1 class="mb-3">Welcome to your watchlist!</h1>
+          <h4 class="mb-3">Click below to enter!</h4>
+          <%= link_to "Enter", lists_path, class: 'btn btn-primary' %>
+        </div>
       </div>
     </div>
   </div>
-</div>

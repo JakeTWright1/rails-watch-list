@@ -6,15 +6,16 @@
   </div>
   <hr>
   <hr>
-  <div class="container">
+  <div class="container text-center">
     <div class="row">
       <div class="col-6">
-        <%= link_to "Add movie to list", class: 'btn btn-primary'%>
+        <%= link_to "Add movie to list", movies_path, class: 'btn btn-primary'%>
       </div>
       <div class="col-6">
-        <%= link_to "Delete",
+        <%= link_to "Delete List",
         list_path(@list),
-        data: { turbo_method: :delete }
+        data: { turbo_method: :delete },
+        class: 'btn btn-danger'
         %>
       </div>
     </div>
