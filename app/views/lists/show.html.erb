@@ -1,15 +1,28 @@
 <%= render 'application/navbar' %>
 
 <div class="container">
+  <div class="jumbotron jumbotron-fluid text-center my-3">
+     <%= cl_image_tag @list.photo.key, height: 300, width: 1000, crop: :fill %>
+  </div>
   <div class="py-2 text-center">
     <h1><%= @list.name %></h1>
   </div>
   <hr>
+  <div class="row">
+      <% @list.bookmarks.each do |bookmark| %>
+      <div class="col-4 card m-2 shadow">
+        <h5 class="text-center"><%= bookmark.movie.title %></h5>
+        <p class="text-center"><%= bookmark.movie.overview %></p>
+        <p class="text-center">"<em><%= bookmark.comment %></em>"</p>
+      </div>
+      <% end %>
+    </div>
+  </div>
   <hr>
   <div class="container text-center">
     <div class="row">
       <div class="col-6">
-        <%= link_to "Add movie to list", movies_path, class: 'btn btn-primary'%>
+        <%= link_to "Add movie to list", new_list_bookmark_path(@list), class: 'btn btn-primary'%>
       </div>
       <div class="col-6">
         <%= link_to "Delete List",

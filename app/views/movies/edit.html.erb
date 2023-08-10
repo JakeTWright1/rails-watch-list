@@ -1,0 +1,10 @@
+<%= render 'application/navbar' %>
+<div class="container">
+  <h1 class="text-center">Upload a Poster!</h1>
+</div>
+<div class="text-center">
+  <%= simple_form_for @movie, :method => 'patch' do |f| %>
+  <%= f.file_field :photo%>
+  <%= f.submit %>
+  <% end %>
+</div>

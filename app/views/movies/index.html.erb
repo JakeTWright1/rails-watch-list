@@ -9,16 +9,19 @@
   <% @movies.each do |movie| %>
       <div class="col-3 my-2 card">
         <div class="card-top">
-          <div class="shadow" style="min-height: 10rem">
-              <img class="card-img-top" src="<%= movie.poster_url%>" alt="Card image cap">
+          <div class="shadow" style="min-height: 30rem">
+          <% if movie.photo.attached? %>
+            <%= cl_image_tag movie.photo.key, height: 300, width: 400, crop: :fill %>
+          <% else %>
+            <h2><%= movie.title %></h2>
+          <% end %>
           </div>
         </div>
-        <div class="card-inner">
-          <h5 class="card-title text-center my-2"><%= movie.title %></h5>
+        <div class="card-inner" >
           <hr>
           <p><%= movie.overview %></p>
           <hr>
-          <%= link_to "Upload image", class: "btn btn-primary py-3"%>
+          <%= link_to "Add Poster", edit_movie_path(movie), class: 'btn btn-primary' %>
         </div>
       </div>
   <% end %>

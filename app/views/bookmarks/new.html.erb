@@ -1,8 +1,10 @@
+<%= render 'application/navbar' %>
 <div class="container">
   <div class="text-center">
-  <%= simple_form_for @bookmark do |f| %>
+  <%= simple_form_for [@list, @bookmark] do |f| %>
   <%= f.input :comment %>
   <%= f.association :movie %>
-  <%= f.association :list %>
+  <%= f.submit "Add Movie", class: 'btn btn-primary' %>
+  <% end %>
   </div>
 </div>
