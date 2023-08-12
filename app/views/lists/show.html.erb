@@ -1,7 +1,7 @@
 <%= render 'application/navbar' %>
 
 <div class="container">
-  <div class="jumbotron jumbotron-fluid text-center my-3">
+  <div class="banner text-center my-3">
      <%= cl_image_tag @list.photo.key, height: 300, width: 1000, crop: :fill %>
   </div>
   <div class="py-2 text-center">
@@ -12,6 +12,7 @@
       <% @list.bookmarks.each do |bookmark| %>
       <div class="col-4 card m-2 shadow">
         <h5 class="text-center"><%= bookmark.movie.title %></h5>
+        <img src="<%= bookmark.movie.poster_url%>" alt="poster">
         <p class="text-center"><%= bookmark.movie.overview %></p>
         <p class="text-center">"<em><%= bookmark.comment %></em>"</p>
       </div>

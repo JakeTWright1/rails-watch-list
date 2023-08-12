@@ -2,19 +2,15 @@
 <%= render 'application/navbar' %>
 <div class="container">
   <div class="text-center mt-2">
-    <h1 style="font-family: Helvetica, sans-serif">All Movies </h1>
+    <h1 style="font-family: Helvetica, sans-serif">All Movies (<%= @movies.count %>)</h1>
   </div>
   <hr>
   <div class="row text-center">
   <% @movies.each do |movie| %>
       <div class="col-3 my-2 card">
         <div class="card-top">
-          <div class="shadow" style="min-height: 30rem">
-          <% if movie.photo.attached? %>
-            <%= cl_image_tag movie.photo.key, height: 300, width: 400, crop: :fill %>
-          <% else %>
-            <h2><%= movie.title %></h2>
-          <% end %>
+          <div class="shadow d-flex justify-content-center align-items-center" style="min-height: 30rem">
+            <img class ="poster" src="<%= movie.poster_url %>" alt="poster">
           </div>
         </div>
         <div class="card-inner" >
